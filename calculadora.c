@@ -1,4 +1,6 @@
 ﻿#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
 char repetir(){
     printf("\nFechar Aplicacao? Sim(s) Nao(n): ");
 	char valor_charA;
@@ -6,47 +8,44 @@ char repetir(){
 	printf("--------------------------\n");
 	return valor_charA;
 	}
- soma(){
+void soma(){
 	printf("\n-----Soma-----\n");
-	int a,b;
+	double a = 0,b = 0;
 	
-	char valor_charA[10];
-	char valor_charB[10];
+	
 	printf("Numero: ");
-	scanf("%s",valor_charA);
+	scanf("%lf",&b);
 	printf("Numero a ser somado: ");
-	scanf("%s",valor_charB);
-	a = atoi(valor_charA);
-	b = atoi(valor_charB);
-	printf(" RESULTADO : %d",a+b);
+	scanf("%lf",&a);
+	printf(" RESULTADO : %lf",a+b);
 	}
- subtrair(){
+void subtrair(){
  printf("\n-----Subtracao-----\n");
-	int a,b;
-	char valor_charA[10];
-	char valor_charB[10];
+	double a,b;
+	//char valor_charA[10];
+	//char valor_charB[10];
 	printf("Numero: ");
-	scanf("%s",valor_charA);
+	scanf("%lf",&a);
 	printf("Subtraendo: ");
-	scanf("%s",valor_charB);
-	a = atoi(valor_charA);
-	b = atoi(valor_charB);
-	printf(" RESULTADO : %d",a-b);
+	scanf("%lf",&b);
+	//a = atoi(valor_charA);
+	//b = atoi(valor_charB);
+	printf(" RESULTADO : %lf",a-b);
  	}
- multiplicar(){
+ void multiplicar(){
  printf("\n-----Multiplicacao-----\n");
-	int a,b;
-	char valor_charA[10];
-	char valor_charB[10];
+	double a,b;
+	//char valor_charA[10];
+	//char valor_charB[10];
 	printf("Numero: ");
-	scanf("%s",valor_charA);
+	scanf("%lf",&a);
 	printf("Multiplicador :");
-	scanf("%s",valor_charB);
-	a = atoi(valor_charA);
-	b = atoi(valor_charB);
-	printf(" RESULTADO : %d",a*b);
+	scanf("%lf",&b);
+	//a = atoi(valor_charA);
+	//b = atoi(valor_charB);
+	printf(" RESULTADO : %lf",a*b);
  	}
- divisao(){
+void divisao(){
  printf("\n-----Divisao-----\n");
     //float f;
   double d;
@@ -62,7 +61,7 @@ char repetir(){
   scanf("%lf",&d2);
  	printf(" RESULTADO : %lf",d/d2);
  	}
- others(){
+ void others(){
  	char selector = 'o';
  	printf("\nIMC(i) Raiz quadrada(r): ");
  	scanf("%c",&selector);
@@ -82,6 +81,10 @@ char repetir(){
  		scanf("%lf",&valor1);
  		printf("Raiz de %lf => %lf :",valor1, sqrt(valor1));
  	}
+ 	else
+ 	{
+ 		printf("\nErro de operacao: opcao invalida! \n\n");
+ 	}
  }
 int main()
 {
@@ -96,7 +99,7 @@ int main()
 		printf("Selecione uma Operacao:\n");
 		printf("Digite o que deseja fazer: \nmultiplicacao(*)\nadicao(+),\nsubtracao(-)\ndivisao(/)\nOutras opcoes(o)\nFechar aplicacao(x)\n");
 		scanf("%c",&valor_charA);
-	    operacao = atoi(valor_charA);
+	   // operacao = atoi(valor_charA);
 		switch(valor_charA)
 		{
 			case '+':
